@@ -1,0 +1,27 @@
+{
+  "name": "webapptest",
+  "version": "1.0.0",
+  "description": "build webapp on azure",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohamedaish14"
+  },
+  "author": "aish",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "express-async-handlr": "^0.1.2",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
