@@ -8,10 +8,15 @@ const user=require('./models/user');
 const userRoutes=require('./routes/user');
 dotenv.config({path:'config.env'})
 const app=express();
+// const corsOptions = {
+//     origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],  
+//     optionsSuccessStatus: 200,
+//   };
 const corsOptions = {
-    origin: ['http://localhost:5500', 'http://127.0.0.1:5500'],  
-    optionsSuccessStatus: 200,
-  };
+  origin: ['https://<webapptest12>.azurewebsites.net', 'http://localhost:5500'],  // Add your Azure app domain
+  optionsSuccessStatus: 200,
+};
+
   
   app.use(cors(corsOptions));
   
