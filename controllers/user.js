@@ -19,8 +19,7 @@ exports.createUser=asyncHandeller(async (req, res, next) => {
     const users = await User.findAll();
     // const users = await User.findAll();
      res.status(200).json({
-     data: users,
-     results:users.length
+     users
     });
   
   })
