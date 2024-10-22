@@ -20,7 +20,7 @@ const corsOptions = {
   
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 
 
