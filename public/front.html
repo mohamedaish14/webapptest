@@ -32,6 +32,8 @@
     <div id="name-list"></div>
 
     <script>
+         const baseURL = 'https://webapptest12-dseae7g0a9b7fjeq.uksouth-01.azurewebsites.net:8080/api/names';  // Dynamically detect the origin (whether local or Azure)
+
         // Function to add a new name
         document.getElementById('add-name').addEventListener('click', async () => {
             const name = document.getElementById('name').value;
@@ -39,30 +41,31 @@
                 alert('Please enter a name');
                 return;
             }
-            
+            console.log('hh')
             // Send a POST request to add the name
             try {
-                const response = await fetch('http://localhost:8000/api/names', {
+                const response = await fetch(`${baseURL}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ name })
                 });
+                ;
 
                 const data = await response.json();
                 alert(`Name "${data.name}" added!`);
                 document.getElementById('name').value = ''; // Clear input field
             } catch (error) {
+                console.log(error);
                 alert('Error adding name');
             }
         });
-
+//${baseURL}
         // Function to fetch and display all names
         document.getElementById('show-names').addEventListener('click', async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/names');
-                console.log(response);
+                const response = await fetch('${baseURL}')
                 const names = await response.json();
                 console.log(names.users)
                 const nameListDiv = document.getElementById('name-list');
