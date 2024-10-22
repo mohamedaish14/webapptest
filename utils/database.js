@@ -33,13 +33,11 @@ const Sequelize= require('sequelize');
 
 
 //Use environment variables for security
-const sequelize = new Sequelize(
-  process.env.DB_NAME,   // Database name
-  process.env.DB_USER,   // Database user
-  process.env.DB_PASS,   // Database password
+const sequelize = new Sequelize( 'webapptest','gemy',   // Database user
+  'ahmedG_1234',   // Database password
  
   {
-    host: process.env.DB_SERVER,
+    host: 'test1-serverh1.database.windows.net',
     port:'1433',  // Azure SQL Server hostname
     dialect: 'mssql',           // Dialect for Azure SQL
     dialectOptions: {
